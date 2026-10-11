@@ -1,0 +1,21 @@
+node_modules/
+dist/
+.venv/
+__pycache__/
+.pytest_cache/
+.env
+.env.*
+!.env.example
+*.log
+*.tsbuildinfo
+
+# Local credentials and workstation/runtime artifacts
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+service-account*.json
+secrets/
+.aws/
+%SystemDrive%/

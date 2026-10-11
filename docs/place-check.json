@@ -1,0 +1,763 @@
+{
+  "start": {
+    "lat": 12.9765,
+    "lon": 77.5929
+  },
+  "radius_m": 1200,
+  "metadata": {
+    "provider": "overpass-api.de",
+    "attempts": 1,
+    "cache_hit": false,
+    "failures": [],
+    "status": "ok"
+  },
+  "places": [
+    {
+      "id": "way/52245593",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.976712,
+      "lon": 77.5938837,
+      "distance_m": 109,
+      "osm_url": "https://www.openstreetmap.org/way/52245593"
+    },
+    {
+      "id": "node/9161061918",
+      "name": "Purified Drinking Water",
+      "kind": "water",
+      "lat": 12.9749225,
+      "lon": 77.5935146,
+      "distance_m": 188,
+      "osm_url": "https://www.openstreetmap.org/node/9161061918"
+    },
+    {
+      "id": "way/373368045",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9782333,
+      "lon": 77.5922524,
+      "distance_m": 205,
+      "osm_url": "https://www.openstreetmap.org/way/373368045"
+    },
+    {
+      "id": "node/9162183603",
+      "name": "Jaivik Mall",
+      "kind": "fruit",
+      "lat": 12.975998,
+      "lon": 77.5948369,
+      "distance_m": 217,
+      "osm_url": "https://www.openstreetmap.org/node/9162183603"
+    },
+    {
+      "id": "way/1296036847",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.978389,
+      "lon": 77.592062,
+      "distance_m": 229,
+      "osm_url": "https://www.openstreetmap.org/way/1296036847"
+    },
+    {
+      "id": "way/38318887",
+      "name": "Cubbon Park Circle",
+      "kind": "greenery",
+      "lat": 12.9754968,
+      "lon": 77.5909405,
+      "distance_m": 240,
+      "osm_url": "https://www.openstreetmap.org/way/38318887"
+    },
+    {
+      "id": "way/22895320",
+      "name": "Cubbon Park",
+      "kind": "greenery",
+      "lat": 12.9741742,
+      "lon": 77.5934146,
+      "distance_m": 265,
+      "osm_url": "https://www.openstreetmap.org/way/22895320"
+    },
+    {
+      "id": "node/9162183601",
+      "name": "Go Green Organic's Nest",
+      "kind": "fruit",
+      "lat": 12.9755262,
+      "lon": 77.5953238,
+      "distance_m": 284,
+      "osm_url": "https://www.openstreetmap.org/node/9162183601"
+    },
+    {
+      "id": "way/1276833556",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9787846,
+      "lon": 77.5917218,
+      "distance_m": 284,
+      "osm_url": "https://www.openstreetmap.org/way/1276833556"
+    },
+    {
+      "id": "way/1217527846",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9789427,
+      "lon": 77.5914728,
+      "distance_m": 313,
+      "osm_url": "https://www.openstreetmap.org/way/1217527846"
+    },
+    {
+      "id": "way/1276833564",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9777509,
+      "lon": 77.5901625,
+      "distance_m": 328,
+      "osm_url": "https://www.openstreetmap.org/way/1276833564"
+    },
+    {
+      "id": "way/52156312",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9745158,
+      "lon": 77.5906346,
+      "distance_m": 330,
+      "osm_url": "https://www.openstreetmap.org/way/52156312"
+    },
+    {
+      "id": "node/11133510085",
+      "name": "HOPCOMS",
+      "kind": "fruit",
+      "lat": 12.9749172,
+      "lon": 77.5903134,
+      "distance_m": 331,
+      "osm_url": "https://www.openstreetmap.org/node/11133510085"
+    },
+    {
+      "id": "node/6373419686",
+      "name": "Purified Drinking Water",
+      "kind": "water",
+      "lat": 12.9740688,
+      "lon": 77.5909788,
+      "distance_m": 341,
+      "osm_url": "https://www.openstreetmap.org/node/6373419686"
+    },
+    {
+      "id": "way/1272457065",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9750329,
+      "lon": 77.5957056,
+      "distance_m": 345,
+      "osm_url": "https://www.openstreetmap.org/way/1272457065"
+    },
+    {
+      "id": "node/663564844",
+      "name": "Unnamed mapped drinking-water point",
+      "kind": "water",
+      "lat": 12.9741326,
+      "lon": 77.5906196,
+      "distance_m": 361,
+      "osm_url": "https://www.openstreetmap.org/node/663564844"
+    },
+    {
+      "id": "way/52057921",
+      "name": "Jawahar Bal Bhavan Childrens Park",
+      "kind": "greenery",
+      "lat": 12.9760768,
+      "lon": 77.5966542,
+      "distance_m": 410,
+      "osm_url": "https://www.openstreetmap.org/way/52057921"
+    },
+    {
+      "id": "way/52097397",
+      "name": "Rose Garden",
+      "kind": "greenery",
+      "lat": 12.9736209,
+      "lon": 77.590413,
+      "distance_m": 418,
+      "osm_url": "https://www.openstreetmap.org/way/52097397"
+    },
+    {
+      "id": "way/363474186",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9793538,
+      "lon": 77.5902828,
+      "distance_m": 426,
+      "osm_url": "https://www.openstreetmap.org/way/363474186"
+    },
+    {
+      "id": "node/663941136",
+      "name": "Bird and Rabbit park",
+      "kind": "greenery",
+      "lat": 12.9770068,
+      "lon": 77.5969363,
+      "distance_m": 441,
+      "osm_url": "https://www.openstreetmap.org/node/663941136"
+    },
+    {
+      "id": "way/363474188",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9800822,
+      "lon": 77.5909896,
+      "distance_m": 449,
+      "osm_url": "https://www.openstreetmap.org/way/363474188"
+    },
+    {
+      "id": "way/52059217",
+      "name": "Jawahar Bal Bhavan",
+      "kind": "greenery",
+      "lat": 12.9765448,
+      "lon": 77.5972895,
+      "distance_m": 476,
+      "osm_url": "https://www.openstreetmap.org/way/52059217"
+    },
+    {
+      "id": "way/1184849335",
+      "name": "Unnamed mapped park",
+      "kind": "greenery",
+      "lat": 12.9803849,
+      "lon": 77.595627,
+      "distance_m": 523,
+      "osm_url": "https://www.openstreetmap.org/way/1184849335"
+    },
+    {
+      "id": "way/1352263715",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9812535,
+      "lon": 77.592951,
+      "distance_m": 529,
+      "osm_url": "https://www.openstreetmap.org/way/1352263715"
+    },
+    {
+      "id": "way/38871256",
+      "name": "Raj Bhavan Gardens",
+      "kind": "greenery",
+      "lat": 12.9813298,
+      "lon": 77.591682,
+      "distance_m": 553,
+      "osm_url": "https://www.openstreetmap.org/way/38871256"
+    },
+    {
+      "id": "way/372061854",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9814317,
+      "lon": 77.592087,
+      "distance_m": 555,
+      "osm_url": "https://www.openstreetmap.org/way/372061854"
+    },
+    {
+      "id": "way/38871254",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.98014,
+      "lon": 77.5892343,
+      "distance_m": 567,
+      "osm_url": "https://www.openstreetmap.org/way/38871254"
+    },
+    {
+      "id": "way/1125334907",
+      "name": "Unnamed mapped park",
+      "kind": "greenery",
+      "lat": 12.972642,
+      "lon": 77.596433,
+      "distance_m": 575,
+      "osm_url": "https://www.openstreetmap.org/way/1125334907"
+    },
+    {
+      "id": "way/372061855",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9818545,
+      "lon": 77.5923121,
+      "distance_m": 599,
+      "osm_url": "https://www.openstreetmap.org/way/372061855"
+    },
+    {
+      "id": "way/460600474",
+      "name": "Queen's Park",
+      "kind": "greenery",
+      "lat": 12.9786548,
+      "lon": 77.5979775,
+      "distance_m": 600,
+      "osm_url": "https://www.openstreetmap.org/way/460600474"
+    },
+    {
+      "id": "way/1312433832",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9815266,
+      "lon": 77.5949233,
+      "distance_m": 600,
+      "osm_url": "https://www.openstreetmap.org/way/1312433832"
+    },
+    {
+      "id": "way/1316469302",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9794573,
+      "lon": 77.5976029,
+      "distance_m": 606,
+      "osm_url": "https://www.openstreetmap.org/way/1316469302"
+    },
+    {
+      "id": "way/1512666765",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9725644,
+      "lon": 77.5968625,
+      "distance_m": 613,
+      "osm_url": "https://www.openstreetmap.org/way/1512666765"
+    },
+    {
+      "id": "way/1354824983",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9803921,
+      "lon": 77.5886813,
+      "distance_m": 629,
+      "osm_url": "https://www.openstreetmap.org/way/1354824983"
+    },
+    {
+      "id": "way/38872968",
+      "name": "MS Building Park",
+      "kind": "greenery",
+      "lat": 12.9784331,
+      "lon": 77.5873824,
+      "distance_m": 635,
+      "osm_url": "https://www.openstreetmap.org/way/38872968"
+    },
+    {
+      "id": "way/1125334908",
+      "name": "Unnamed mapped park",
+      "kind": "greenery",
+      "lat": 12.9722439,
+      "lon": 77.5971626,
+      "distance_m": 661,
+      "osm_url": "https://www.openstreetmap.org/way/1125334908"
+    },
+    {
+      "id": "way/1368422467",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9707692,
+      "lon": 77.5911969,
+      "distance_m": 663,
+      "osm_url": "https://www.openstreetmap.org/way/1368422467"
+    },
+    {
+      "id": "node/11298111561",
+      "name": "Unnamed mapped drinking-water point",
+      "kind": "water",
+      "lat": 12.9701208,
+      "lon": 77.5920682,
+      "distance_m": 715,
+      "osm_url": "https://www.openstreetmap.org/node/11298111561"
+    },
+    {
+      "id": "way/1311437518",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9810068,
+      "lon": 77.5977153,
+      "distance_m": 723,
+      "osm_url": "https://www.openstreetmap.org/way/1311437518"
+    },
+    {
+      "id": "node/12019980193",
+      "name": "Unnamed mapped drinking-water point",
+      "kind": "water",
+      "lat": 12.9806872,
+      "lon": 77.5980723,
+      "distance_m": 729,
+      "osm_url": "https://www.openstreetmap.org/node/12019980193"
+    },
+    {
+      "id": "way/52063158",
+      "name": "Mahatma Gandhi Park",
+      "kind": "greenery",
+      "lat": 12.9772497,
+      "lon": 77.5996818,
+      "distance_m": 740,
+      "osm_url": "https://www.openstreetmap.org/way/52063158"
+    },
+    {
+      "id": "way/1296036855",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9827106,
+      "lon": 77.589983,
+      "distance_m": 759,
+      "osm_url": "https://www.openstreetmap.org/way/1296036855"
+    },
+    {
+      "id": "way/1296036856",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9827782,
+      "lon": 77.5896154,
+      "distance_m": 784,
+      "osm_url": "https://www.openstreetmap.org/way/1296036856"
+    },
+    {
+      "id": "way/1308632311",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9726909,
+      "lon": 77.5992147,
+      "distance_m": 805,
+      "osm_url": "https://www.openstreetmap.org/way/1308632311"
+    },
+    {
+      "id": "way/38871258",
+      "name": "Unnamed mapped park",
+      "kind": "greenery",
+      "lat": 12.9827565,
+      "lon": 77.5889767,
+      "distance_m": 815,
+      "osm_url": "https://www.openstreetmap.org/way/38871258"
+    },
+    {
+      "id": "way/1124828965",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9835259,
+      "lon": 77.5899784,
+      "distance_m": 843,
+      "osm_url": "https://www.openstreetmap.org/way/1124828965"
+    },
+    {
+      "id": "way/1310872547",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9823883,
+      "lon": 77.5871066,
+      "distance_m": 907,
+      "osm_url": "https://www.openstreetmap.org/way/1310872547"
+    },
+    {
+      "id": "way/1315455670",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9697344,
+      "lon": 77.5880922,
+      "distance_m": 915,
+      "osm_url": "https://www.openstreetmap.org/way/1315455670"
+    },
+    {
+      "id": "way/38772822",
+      "name": "Traffic Park",
+      "kind": "greenery",
+      "lat": 12.9734667,
+      "lon": 77.6009237,
+      "distance_m": 933,
+      "osm_url": "https://www.openstreetmap.org/way/38772822"
+    },
+    {
+      "id": "node/9779742231",
+      "name": "Unnamed mapped drinking-water point",
+      "kind": "water",
+      "lat": 12.9848191,
+      "lon": 77.5913119,
+      "distance_m": 941,
+      "osm_url": "https://www.openstreetmap.org/node/9779742231"
+    },
+    {
+      "id": "node/11207651305",
+      "name": "Unnamed mapped drinking-water point",
+      "kind": "water",
+      "lat": 12.984538,
+      "lon": 77.5898492,
+      "distance_m": 953,
+      "osm_url": "https://www.openstreetmap.org/node/11207651305"
+    },
+    {
+      "id": "way/1066870635",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9719916,
+      "lon": 77.6004382,
+      "distance_m": 958,
+      "osm_url": "https://www.openstreetmap.org/way/1066870635"
+    },
+    {
+      "id": "way/273780381",
+      "name": "Indira Gandhi Musical Fountain Park",
+      "kind": "greenery",
+      "lat": 12.9851453,
+      "lon": 77.591501,
+      "distance_m": 973,
+      "osm_url": "https://www.openstreetmap.org/way/273780381"
+    },
+    {
+      "id": "way/1091791761",
+      "name": "Unnamed mapped park",
+      "kind": "greenery",
+      "lat": 12.9677177,
+      "lon": 77.5933725,
+      "distance_m": 978,
+      "osm_url": "https://www.openstreetmap.org/way/1091791761"
+    },
+    {
+      "id": "way/796463146",
+      "name": "Sampangi Tank Park",
+      "kind": "greenery",
+      "lat": 12.9680211,
+      "lon": 77.5903027,
+      "distance_m": 984,
+      "osm_url": "https://www.openstreetmap.org/way/796463146"
+    },
+    {
+      "id": "node/452414173",
+      "name": "Unnamed mapped drinking-water point",
+      "kind": "water",
+      "lat": 12.9685163,
+      "lon": 77.5887312,
+      "distance_m": 996,
+      "osm_url": "https://www.openstreetmap.org/node/452414173"
+    },
+    {
+      "id": "way/1308629018",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9681881,
+      "lon": 77.5972126,
+      "distance_m": 1036,
+      "osm_url": "https://www.openstreetmap.org/way/1308629018"
+    },
+    {
+      "id": "way/775169698",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9846121,
+      "lon": 77.5881533,
+      "distance_m": 1038,
+      "osm_url": "https://www.openstreetmap.org/way/775169698"
+    },
+    {
+      "id": "way/1557622981",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9679211,
+      "lon": 77.5891094,
+      "distance_m": 1039,
+      "osm_url": "https://www.openstreetmap.org/way/1557622981"
+    },
+    {
+      "id": "way/273786646",
+      "name": "National Military Memorial",
+      "kind": "greenery",
+      "lat": 12.9858095,
+      "lon": 77.5908885,
+      "distance_m": 1058,
+      "osm_url": "https://www.openstreetmap.org/way/273786646"
+    },
+    {
+      "id": "way/1310885245",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9677095,
+      "lon": 77.5891256,
+      "distance_m": 1060,
+      "osm_url": "https://www.openstreetmap.org/way/1310885245"
+    },
+    {
+      "id": "way/1557622980",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9677818,
+      "lon": 77.5888842,
+      "distance_m": 1063,
+      "osm_url": "https://www.openstreetmap.org/way/1557622980"
+    },
+    {
+      "id": "way/1557622979",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9677212,
+      "lon": 77.5887168,
+      "distance_m": 1076,
+      "osm_url": "https://www.openstreetmap.org/way/1557622979"
+    },
+    {
+      "id": "node/2577082175",
+      "name": "Unnamed mapped greengrocer",
+      "kind": "fruit",
+      "lat": 12.9679532,
+      "lon": 77.5879077,
+      "distance_m": 1094,
+      "osm_url": "https://www.openstreetmap.org/node/2577082175"
+    },
+    {
+      "id": "way/52245874",
+      "name": "Unnamed mapped park",
+      "kind": "greenery",
+      "lat": 12.9742464,
+      "lon": 77.5830767,
+      "distance_m": 1094,
+      "osm_url": "https://www.openstreetmap.org/way/52245874"
+    },
+    {
+      "id": "way/782014093",
+      "name": "Unnamed mapped park",
+      "kind": "greenery",
+      "lat": 12.9863222,
+      "lon": 77.5935294,
+      "distance_m": 1094,
+      "osm_url": "https://www.openstreetmap.org/way/782014093"
+    },
+    {
+      "id": "way/1039668733",
+      "name": "Tasker Town Park",
+      "kind": "greenery",
+      "lat": 12.9844265,
+      "lon": 77.5988997,
+      "distance_m": 1095,
+      "osm_url": "https://www.openstreetmap.org/way/1039668733"
+    },
+    {
+      "id": "way/362696495",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9863731,
+      "lon": 77.5928588,
+      "distance_m": 1098,
+      "osm_url": "https://www.openstreetmap.org/way/362696495"
+    },
+    {
+      "id": "node/9870744999",
+      "name": "Unnamed mapped greengrocer",
+      "kind": "fruit",
+      "lat": 12.966631,
+      "lon": 77.5922814,
+      "distance_m": 1099,
+      "osm_url": "https://www.openstreetmap.org/node/9870744999"
+    },
+    {
+      "id": "node/9870745000",
+      "name": "Unnamed mapped greengrocer",
+      "kind": "fruit",
+      "lat": 12.9666199,
+      "lon": 77.5925126,
+      "distance_m": 1099,
+      "osm_url": "https://www.openstreetmap.org/node/9870745000"
+    },
+    {
+      "id": "way/1047676498",
+      "name": "Police Memorial Park",
+      "kind": "greenery",
+      "lat": 12.96843,
+      "lon": 77.5870212,
+      "distance_m": 1100,
+      "osm_url": "https://www.openstreetmap.org/way/1047676498"
+    },
+    {
+      "id": "node/10719419554",
+      "name": "HOPCOMS",
+      "kind": "fruit",
+      "lat": 12.9844304,
+      "lon": 77.5992197,
+      "distance_m": 1116,
+      "osm_url": "https://www.openstreetmap.org/node/10719419554"
+    },
+    {
+      "id": "way/362696496",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9865463,
+      "lon": 77.5926026,
+      "distance_m": 1118,
+      "osm_url": "https://www.openstreetmap.org/way/362696496"
+    },
+    {
+      "id": "way/1258159464",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9759869,
+      "lon": 77.5825981,
+      "distance_m": 1118,
+      "osm_url": "https://www.openstreetmap.org/way/1258159464"
+    },
+    {
+      "id": "way/1152469183",
+      "name": "Unnamed mapped park",
+      "kind": "greenery",
+      "lat": 12.9843835,
+      "lon": 77.5993816,
+      "distance_m": 1123,
+      "osm_url": "https://www.openstreetmap.org/way/1152469183"
+    },
+    {
+      "id": "way/775169699",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9855698,
+      "lon": 77.588275,
+      "distance_m": 1126,
+      "osm_url": "https://www.openstreetmap.org/way/775169699"
+    },
+    {
+      "id": "way/52244609",
+      "name": "Banappa Park",
+      "kind": "greenery",
+      "lat": 12.9692305,
+      "lon": 77.5854109,
+      "distance_m": 1145,
+      "osm_url": "https://www.openstreetmap.org/way/52244609"
+    },
+    {
+      "id": "way/1297630661",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9858819,
+      "lon": 77.5883501,
+      "distance_m": 1154,
+      "osm_url": "https://www.openstreetmap.org/way/1297630661"
+    },
+    {
+      "id": "way/1124089055",
+      "name": "Oval Lawn",
+      "kind": "greenery",
+      "lat": 12.9669663,
+      "lon": 77.5975083,
+      "distance_m": 1172,
+      "osm_url": "https://www.openstreetmap.org/way/1124089055"
+    },
+    {
+      "id": "way/317494478",
+      "name": "Unnamed mapped garden",
+      "kind": "greenery",
+      "lat": 12.9666924,
+      "lon": 77.5886314,
+      "distance_m": 1185,
+      "osm_url": "https://www.openstreetmap.org/way/317494478"
+    },
+    {
+      "id": "way/36884560",
+      "name": "Freedom Park",
+      "kind": "greenery",
+      "lat": 12.9774067,
+      "lon": 77.5819036,
+      "distance_m": 1196,
+      "osm_url": "https://www.openstreetmap.org/way/36884560"
+    }
+  ],
+  "status": "ok",
+  "latency_seconds": 2.13,
+  "second_lookup": {
+    "provider": "overpass-api.de",
+    "attempts": 0,
+    "cache_hit": true,
+    "failures": [],
+    "status": "ok"
+  },
+  "events": [
+    {
+      "provider": "overpass-api.de",
+      "http_status": 200,
+      "element_count": 88,
+      "remark": null,
+      "latency_seconds": 2.129
+    }
+  ]
+}

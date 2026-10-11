@@ -1,0 +1,487 @@
+{
+  "model": "gemma3:4b",
+  "unloaded_before_test": [],
+  "cold_start_verified_empty": true,
+  "adapter_sha256": "1c8965719fa369b6f0258c5492262da113235327427e1de8fe17aa653afc1469",
+  "case_runner_sha256": "ecb4daf1116b60b029029c39b79000b32cda4ab7a12347c2de6f3ea139acd01a",
+  "cold_start": {
+    "name": "ordinary walk",
+    "phase": "cold",
+    "request": "A 30 minute walk through parks.",
+    "current": {
+      "mode": "walking",
+      "minutes": 30,
+      "preferences": [],
+      "stop_minutes": 0
+    },
+    "expected": {
+      "mode": "walking",
+      "minutes": 30,
+      "preferences": [
+        "greenery"
+      ],
+      "stop_minutes": 0
+    },
+    "actual": {
+      "preferences": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [
+          "greenery"
+        ],
+        "stop_minutes": 0
+      },
+      "source": "gemma",
+      "message": "Gemma interpreted your request. Review the settings before planning."
+    },
+    "http_status": 200,
+    "passed": true,
+    "latency_seconds": 11.485,
+    "ollama": {
+      "model": "gemma3:4b",
+      "temperature": 0,
+      "schema_required": [
+        "mode",
+        "minutes",
+        "preferences",
+        "stop_minutes"
+      ],
+      "schema_defaults": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [],
+        "stop_minutes": 0
+      },
+      "http_status": 200,
+      "raw_content": "{\"mode\":\"walking\",\"minutes\":30,\"preferences\":[\"greenery\"],\"stop_minutes\":0}",
+      "load_duration": 5623407400,
+      "total_duration": 11465013500,
+      "prompt_eval_duration": 4139080000,
+      "eval_duration": 1683130000,
+      "prompt_eval_count": 248,
+      "eval_count": 22
+    }
+  },
+  "cases": [
+    {
+      "name": "ordinary walk",
+      "phase": "warm",
+      "request": "A 30 minute walk through parks.",
+      "current": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [],
+        "stop_minutes": 0
+      },
+      "expected": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [
+          "greenery"
+        ],
+        "stop_minutes": 0
+      },
+      "actual": {
+        "preferences": {
+          "mode": "walking",
+          "minutes": 30,
+          "preferences": [
+            "greenery"
+          ],
+          "stop_minutes": 0
+        },
+        "source": "gemma",
+        "message": "Gemma interpreted your request. Review the settings before planning."
+      },
+      "http_status": 200,
+      "passed": true,
+      "latency_seconds": 1.967,
+      "ollama": {
+        "model": "gemma3:4b",
+        "temperature": 0,
+        "schema_required": [
+          "mode",
+          "minutes",
+          "preferences",
+          "stop_minutes"
+        ],
+        "schema_defaults": {
+          "mode": "walking",
+          "minutes": 30,
+          "preferences": [],
+          "stop_minutes": 0
+        },
+        "http_status": 200,
+        "raw_content": "{\"mode\":\"walking\",\"minutes\":30,\"preferences\":[\"greenery\"],\"stop_minutes\":0}",
+        "load_duration": 6434800,
+        "total_duration": 1944985400,
+        "prompt_eval_duration": 262769000,
+        "eval_duration": 1671062000,
+        "prompt_eval_count": 248,
+        "eval_count": 22
+      }
+    },
+    {
+      "name": "ordinary jog",
+      "phase": "warm",
+      "request": "Jog for 40 minutes.",
+      "current": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [],
+        "stop_minutes": 0
+      },
+      "expected": {
+        "mode": "jogging",
+        "minutes": 40,
+        "preferences": [],
+        "stop_minutes": 0
+      },
+      "actual": {
+        "preferences": {
+          "mode": "jogging",
+          "minutes": 40,
+          "preferences": [],
+          "stop_minutes": 0
+        },
+        "source": "gemma",
+        "message": "Gemma interpreted your request. Review the settings before planning."
+      },
+      "http_status": 200,
+      "passed": true,
+      "latency_seconds": 5.752,
+      "ollama": {
+        "model": "gemma3:4b",
+        "temperature": 0,
+        "schema_required": [
+          "mode",
+          "minutes",
+          "preferences",
+          "stop_minutes"
+        ],
+        "schema_defaults": {
+          "mode": "walking",
+          "minutes": 30,
+          "preferences": [],
+          "stop_minutes": 0
+        },
+        "http_status": 200,
+        "raw_content": "{\"mode\":\"jogging\",\"minutes\":40,\"preferences\":[],\"stop_minutes\":0}",
+        "load_duration": 1678300,
+        "total_duration": 5730831900,
+        "prompt_eval_duration": 4115182000,
+        "eval_duration": 1608373000,
+        "prompt_eval_count": 246,
+        "eval_count": 21
+      }
+    },
+    {
+      "name": "preserve defaults",
+      "phase": "warm",
+      "request": "Add scenic views.",
+      "current": {
+        "mode": "jogging",
+        "minutes": 45,
+        "preferences": [
+          "water"
+        ],
+        "stop_minutes": 7
+      },
+      "expected": {
+        "mode": "jogging",
+        "minutes": 45,
+        "preferences": [
+          "water",
+          "scenic"
+        ],
+        "stop_minutes": 7
+      },
+      "actual": {
+        "preferences": {
+          "mode": "jogging",
+          "minutes": 45,
+          "preferences": [
+            "water",
+            "scenic"
+          ],
+          "stop_minutes": 7
+        },
+        "source": "gemma",
+        "message": "Gemma interpreted your request. Review the settings before planning."
+      },
+      "http_status": 200,
+      "passed": true,
+      "latency_seconds": 6.239,
+      "ollama": {
+        "model": "gemma3:4b",
+        "temperature": 0,
+        "schema_required": [
+          "mode",
+          "minutes",
+          "preferences",
+          "stop_minutes"
+        ],
+        "schema_defaults": {
+          "mode": "jogging",
+          "minutes": 45,
+          "preferences": [
+            "water"
+          ],
+          "stop_minutes": 7
+        },
+        "http_status": 200,
+        "raw_content": "{\"mode\":\"jogging\",\"minutes\":45,\"preferences\":[\"water\",\"scenic\"],\"stop_minutes\":7}",
+        "load_duration": 3092200,
+        "total_duration": 6216427200,
+        "prompt_eval_duration": 4133087999,
+        "eval_duration": 2075842000,
+        "prompt_eval_count": 245,
+        "eval_count": 26
+      }
+    },
+    {
+      "name": "negated fruit",
+      "phase": "warm",
+      "request": "No fruit stop.",
+      "current": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [
+          "greenery",
+          "fruit",
+          "water"
+        ],
+        "stop_minutes": 5
+      },
+      "expected": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [
+          "greenery",
+          "water"
+        ],
+        "stop_minutes": 5
+      },
+      "actual": {
+        "preferences": {
+          "mode": "walking",
+          "minutes": 30,
+          "preferences": [
+            "greenery",
+            "water"
+          ],
+          "stop_minutes": 5
+        },
+        "source": "gemma",
+        "message": "Gemma interpreted your request. Review the settings before planning."
+      },
+      "http_status": 200,
+      "passed": true,
+      "latency_seconds": 6.669,
+      "ollama": {
+        "model": "gemma3:4b",
+        "temperature": 0,
+        "schema_required": [
+          "mode",
+          "minutes",
+          "preferences",
+          "stop_minutes"
+        ],
+        "schema_defaults": {
+          "mode": "walking",
+          "minutes": 30,
+          "preferences": [
+            "greenery",
+            "fruit",
+            "water"
+          ],
+          "stop_minutes": 5
+        },
+        "http_status": 200,
+        "raw_content": "{\"mode\":\"walking\",\"minutes\":30,\"preferences\":[\"greenery\",\"water\"],\"stop_minutes\":5}",
+        "load_duration": 3181000,
+        "total_duration": 6637466600,
+        "prompt_eval_duration": 4706745000,
+        "eval_duration": 1922196000,
+        "prompt_eval_count": 249,
+        "eval_count": 24
+      }
+    },
+    {
+      "name": "stop time",
+      "phase": "warm",
+      "request": "A 30 minute jog with greenery and a 5 minute stop.",
+      "current": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [],
+        "stop_minutes": 0
+      },
+      "expected": {
+        "mode": "jogging",
+        "minutes": 30,
+        "preferences": [
+          "greenery"
+        ],
+        "stop_minutes": 5
+      },
+      "actual": {
+        "preferences": {
+          "mode": "jogging",
+          "minutes": 30,
+          "preferences": [
+            "greenery"
+          ],
+          "stop_minutes": 5
+        },
+        "source": "gemma",
+        "message": "Gemma interpreted your request. Review the settings before planning."
+      },
+      "http_status": 200,
+      "passed": true,
+      "latency_seconds": 6.666,
+      "ollama": {
+        "model": "gemma3:4b",
+        "temperature": 0,
+        "schema_required": [
+          "mode",
+          "minutes",
+          "preferences",
+          "stop_minutes"
+        ],
+        "schema_defaults": {
+          "mode": "walking",
+          "minutes": 30,
+          "preferences": [],
+          "stop_minutes": 0
+        },
+        "http_status": 200,
+        "raw_content": "{\"mode\":\"jogging\",\"minutes\":30,\"preferences\":[\"greenery\"],\"stop_minutes\":5}",
+        "load_duration": 2691800,
+        "total_duration": 6636345400,
+        "prompt_eval_duration": 4711493000,
+        "eval_duration": 1916913000,
+        "prompt_eval_count": 254,
+        "eval_count": 23
+      }
+    },
+    {
+      "name": "fruit and stop",
+      "phase": "warm",
+      "request": "Walk for 45 minutes, visit a fruit shop, and take a 10 minute break.",
+      "current": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [],
+        "stop_minutes": 0
+      },
+      "expected": {
+        "mode": "walking",
+        "minutes": 45,
+        "preferences": [
+          "fruit"
+        ],
+        "stop_minutes": 10
+      },
+      "actual": {
+        "preferences": {
+          "mode": "walking",
+          "minutes": 45,
+          "preferences": [
+            "fruit"
+          ],
+          "stop_minutes": 10
+        },
+        "source": "gemma",
+        "message": "Gemma interpreted your request. Review the settings before planning."
+      },
+      "http_status": 200,
+      "passed": true,
+      "latency_seconds": 6.69,
+      "ollama": {
+        "model": "gemma3:4b",
+        "temperature": 0,
+        "schema_required": [
+          "mode",
+          "minutes",
+          "preferences",
+          "stop_minutes"
+        ],
+        "schema_defaults": {
+          "mode": "walking",
+          "minutes": 30,
+          "preferences": [],
+          "stop_minutes": 0
+        },
+        "http_status": 200,
+        "raw_content": "{\"mode\":\"walking\",\"minutes\":45,\"preferences\":[\"fruit\"],\"stop_minutes\":10}",
+        "load_duration": 3727300,
+        "total_duration": 6668107900,
+        "prompt_eval_duration": 4795661000,
+        "eval_duration": 1851035000,
+        "prompt_eval_count": 260,
+        "eval_count": 22
+      }
+    },
+    {
+      "name": "no stops",
+      "phase": "warm",
+      "request": "No stops, just walk for 20 minutes.",
+      "current": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [],
+        "stop_minutes": 5
+      },
+      "expected": {
+        "mode": "walking",
+        "minutes": 20,
+        "preferences": [],
+        "stop_minutes": 0
+      },
+      "actual": {
+        "preferences": {
+          "mode": "walking",
+          "minutes": 20,
+          "preferences": [],
+          "stop_minutes": 0
+        },
+        "source": "gemma",
+        "message": "Gemma interpreted your request. Review the settings before planning."
+      },
+      "http_status": 200,
+      "passed": true,
+      "latency_seconds": 6.267,
+      "ollama": {
+        "model": "gemma3:4b",
+        "temperature": 0,
+        "schema_required": [
+          "mode",
+          "minutes",
+          "preferences",
+          "stop_minutes"
+        ],
+        "schema_defaults": {
+          "mode": "walking",
+          "minutes": 30,
+          "preferences": [],
+          "stop_minutes": 5
+        },
+        "http_status": 200,
+        "raw_content": "{\"mode\":\"walking\",\"minutes\":20,\"preferences\":[],\"stop_minutes\":0}",
+        "load_duration": 3407000,
+        "total_duration": 6235923700,
+        "prompt_eval_duration": 4649727000,
+        "eval_duration": 1577135000,
+        "prompt_eval_count": 250,
+        "eval_count": 20
+      }
+    }
+  ],
+  "passed": 7,
+  "total": 7,
+  "accuracy": 1.0,
+  "warm_mean_seconds": 5.75,
+  "warm_median_seconds": 6.267,
+  "note": "End-to-end application latency. Ollama durations are nanoseconds. No prompt/schema/default repair changes."
+}

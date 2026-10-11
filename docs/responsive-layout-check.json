@@ -1,0 +1,47 @@
+{
+  "method": "CSS cascade and width calculations, not rendered browser measurements",
+  "checks": [
+    {
+      "viewport_px": 360,
+      "columns": 1,
+      "content_px": 328,
+      "form_px": 328,
+      "map_px": 328,
+      "preference_button_px": 143,
+      "route_button_position": "fixed",
+      "route_button_min_height_px": 48
+    },
+    {
+      "viewport_px": 390,
+      "columns": 1,
+      "content_px": 358,
+      "form_px": 358,
+      "map_px": 358,
+      "preference_button_px": 158,
+      "route_button_position": "fixed",
+      "route_button_min_height_px": 48
+    },
+    {
+      "viewport_px": 768,
+      "columns": 1,
+      "content_px": 691.2,
+      "form_px": 691.2,
+      "map_px": 691.2,
+      "preference_button_px": 320.6,
+      "route_button_position": "static",
+      "route_button_min_height_px": 48
+    },
+    {
+      "viewport_px": 1280,
+      "columns": 2,
+      "content_px": 1139.2,
+      "form_px": 345,
+      "map_px": 769.2,
+      "preference_button_px": 144.5,
+      "route_button_position": "static",
+      "route_button_min_height_px": 48
+    }
+  ],
+  "build": "TypeScript and Vite passed",
+  "browser": "No connected browser; rendered overflow, screenshots and interactive resize unverified"
+}

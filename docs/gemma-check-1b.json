@@ -1,0 +1,239 @@
+{
+  "model": "gemma3:1b",
+  "provider": "ollama",
+  "passed": 3,
+  "total": 7,
+  "accuracy": 0.42857142857142855,
+  "latency_mean_seconds": 2.9884285714285714,
+  "latency_median_seconds": 2.716,
+  "timing_note": "End-to-end application latency; first case includes model loading if cold.",
+  "cases": [
+    {
+      "name": "ordinary walk",
+      "request": "A 30 minute walk through parks.",
+      "current": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [],
+        "stop_minutes": 0
+      },
+      "expected": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [
+          "greenery"
+        ],
+        "stop_minutes": 0
+      },
+      "actual": {
+        "preferences": {
+          "mode": "walking",
+          "minutes": 30,
+          "preferences": [
+            "greenery"
+          ],
+          "stop_minutes": 0
+        },
+        "source": "gemma",
+        "message": "Gemma interpreted your request. Review the settings before planning."
+      },
+      "passed": true,
+      "latency_seconds": 3.789
+    },
+    {
+      "name": "ordinary jog",
+      "request": "Jog for 40 minutes.",
+      "current": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [],
+        "stop_minutes": 0
+      },
+      "expected": {
+        "mode": "jogging",
+        "minutes": 40,
+        "preferences": [],
+        "stop_minutes": 0
+      },
+      "actual": {
+        "preferences": {
+          "mode": "jogging",
+          "minutes": 40,
+          "preferences": [
+            "greenery"
+          ],
+          "stop_minutes": 0
+        },
+        "source": "gemma",
+        "message": "Gemma interpreted your request. Review the settings before planning."
+      },
+      "passed": false,
+      "latency_seconds": 2.637
+    },
+    {
+      "name": "preserve defaults",
+      "request": "Add scenic views.",
+      "current": {
+        "mode": "jogging",
+        "minutes": 45,
+        "preferences": [
+          "water"
+        ],
+        "stop_minutes": 7
+      },
+      "expected": {
+        "mode": "jogging",
+        "minutes": 45,
+        "preferences": [
+          "water",
+          "scenic"
+        ],
+        "stop_minutes": 7
+      },
+      "actual": {
+        "preferences": {
+          "mode": "jogging",
+          "minutes": 45,
+          "preferences": [
+            "scenic"
+          ],
+          "stop_minutes": 7
+        },
+        "source": "gemma",
+        "message": "Gemma interpreted your request. Review the settings before planning."
+      },
+      "passed": false,
+      "latency_seconds": 2.707
+    },
+    {
+      "name": "negated fruit",
+      "request": "No fruit stop.",
+      "current": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [
+          "greenery",
+          "fruit",
+          "water"
+        ],
+        "stop_minutes": 5
+      },
+      "expected": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [
+          "greenery",
+          "water"
+        ],
+        "stop_minutes": 5
+      },
+      "actual": {
+        "preferences": {
+          "mode": "walking",
+          "minutes": 30,
+          "preferences": [
+            "greenery",
+            "water"
+          ],
+          "stop_minutes": 5
+        },
+        "source": "gemma",
+        "message": "Gemma interpreted your request. Review the settings before planning."
+      },
+      "passed": true,
+      "latency_seconds": 2.716
+    },
+    {
+      "name": "stop time",
+      "request": "A 30 minute jog with greenery and a 5 minute stop.",
+      "current": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [],
+        "stop_minutes": 0
+      },
+      "expected": {
+        "mode": "jogging",
+        "minutes": 30,
+        "preferences": [
+          "greenery"
+        ],
+        "stop_minutes": 5
+      },
+      "actual": {
+        "preferences": {
+          "mode": "jogging",
+          "minutes": 30,
+          "preferences": [
+            "greenery"
+          ],
+          "stop_minutes": 5
+        },
+        "source": "gemma",
+        "message": "Gemma interpreted your request. Review the settings before planning."
+      },
+      "passed": true,
+      "latency_seconds": 2.711
+    },
+    {
+      "name": "fruit and stop",
+      "request": "Walk for 45 minutes, visit a fruit shop, and take a 10 minute break.",
+      "current": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [],
+        "stop_minutes": 0
+      },
+      "expected": {
+        "mode": "walking",
+        "minutes": 45,
+        "preferences": [
+          "fruit"
+        ],
+        "stop_minutes": 10
+      },
+      "actual": {
+        "preferences": {
+          "mode": "walking",
+          "minutes": 45,
+          "preferences": [
+            "fruit"
+          ],
+          "stop_minutes": 0
+        },
+        "source": "gemma",
+        "message": "Gemma interpreted your request. Review the settings before planning."
+      },
+      "passed": false,
+      "latency_seconds": 2.779
+    },
+    {
+      "name": "no stops",
+      "request": "No stops, just walk for 20 minutes.",
+      "current": {
+        "mode": "walking",
+        "minutes": 30,
+        "preferences": [],
+        "stop_minutes": 5
+      },
+      "expected": {
+        "mode": "walking",
+        "minutes": 20,
+        "preferences": [],
+        "stop_minutes": 0
+      },
+      "actual": {
+        "preferences": {
+          "mode": "walking",
+          "minutes": 20,
+          "preferences": [],
+          "stop_minutes": 5
+        },
+        "source": "gemma",
+        "message": "Gemma interpreted your request. Review the settings before planning."
+      },
+      "passed": false,
+      "latency_seconds": 3.58
+    }
+  ]
+}

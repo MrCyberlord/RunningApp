@@ -1,0 +1,18 @@
+{
+  "http_status": 200,
+  "place_lookup": {
+    "status": "unavailable",
+    "reason": "HTTP 504 / HTTP 500",
+    "cache_hit": false
+  },
+  "places_returned": 0,
+  "route_provider": "FOSSGIS OSRM foot",
+  "distance_m": 2342,
+  "warnings": [
+    "Place service unavailable (HTTP 504 / HTTP 500). No places or stops have been invented; routing continues without them.",
+    "No requested place could be included. This route does not guarantee greenery, scenery, fruit or water.",
+    "Returns to the same mapped start; paths may overlap or be out-and-back.",
+    "Walking estimate uses 4.8 km/h; jogging uses 8 km/h. Terrain, crossings and pauses can add time.",
+    "OSM data may be incomplete. Access, road suitability, opening hours, stock and water quality are unverified."
+  ]
+}

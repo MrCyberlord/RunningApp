@@ -1,0 +1,16 @@
+# Preparation only. No database or paid resources.
+services:
+  - type: web
+    name: runningo
+    runtime: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt && npm --prefix frontend ci && npm --prefix frontend run build
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT --workers 1
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.10
+      - key: NODE_VERSION
+        value: 22.16.0
+      - key: MODEL_PROVIDER
+        value: none
