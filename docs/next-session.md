@@ -53,3 +53,7 @@ Opt-in live checks call free public services/local Ollama and overwrite their la
     .\.venv\Scripts\python.exe -m backend.check_places
 
 Blockers: hosted account/key/free quota and exact Gemma availability; Render account/authorization; unavailable browser connection for visual checks; transient Overpass errors. No paid resource has been provisioned. Git checkpoint is local only; get its hash with git log -1 --oneline.
+
+## October 12 resume update
+
+Local app/Ollama were already running and reused. Fresh HTTP evidence: resume-verification-2026-10-12.json (Gemma source and 3.221 km pedestrian route including 5-min pause; cached real Overpass data). Hosting investigation is time-boxed and blocked on authenticated account/model/spending checks; see hosting-options.md and hosted-gemma-catalog-2026-10-12.json. Exact owner actions: render-deployment.md. Submission materials: dev-draft.md and demo-checklist.md. README is revised for submission. No push, publish, deployment or paid call was performed; new documentation/evidence remains uncommitted for review. Browser discovery still returned no connection.
