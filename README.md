@@ -1,110 +1,124 @@
 # Runningo
 
-Repository: [MrCyberlord/RunningApp](https://github.com/MrCyberlord/RunningApp).
+Runningo turns a short break into a walking or jogging route that returns to your starting point. Built for a Hacktoberfest Touch Grass challenge, it combines real pedestrian routing with optional natural-language preference extraction.
 
-A mobile-friendly walking and jogging route planner for a Hacktoberfest Touch Grass project. Pick a start, choose your time and preferences, and get a real pedestrian route back. React + TypeScript + Leaflet, with FastAPI and optional server-side Gemma interpretation.
+> A 30-minute jog with greenery and a 5-minute stop.
 
-**Status, October 12, 2026: verified locally; not deployed or published. No public demo URL or partner integration exists.** Free services only; promotional credits are allowed, but no out-of-pocket spending, top-ups or paid spillover. No accounts, database, social features or live tracking.
+**Local Gemma integration works. There is no public deployment.**
 
-## Run locally
+## Features
 
-PowerShell from this workstation's repository root. Existing .env and installed models must be preserved:
+- Interactive map with start selection and optional browser geolocation.
+- Walking and jogging routes based on available time, with distance, moving time, pause time and total estimates.
+- Parks, gardens, viewpoints, greengrocers and drinking-water markers from OpenStreetMap where data exists.
+- Preferred-place waypoints, distinct nearby-only markers, and warnings for unmet preferences or unavailable data.
+- Optional Gemma interpretation with strict validation and explicit fallback labels.
+- Green mobile-first interface with loading/error states and responsive Leaflet sizing.
 
-    Set-Location 'D:\Downloads\Hactober Fest\Runningo'
+**Stack:** React, TypeScript, Vite and Leaflet; Python, FastAPI, Pydantic and HTTPX; Ollama with gemma3:4b; FOSSGIS OSRM foot routing and Overpass place lookup. No accounts, database or live tracking.
 
-If Ollama is not already running, start it in a separate terminal:
+## Quick start
 
-    & "$env:LOCALAPPDATA\Programs\Ollama\ollama.exe" serve
+Requires Git, Python 3.11+ (3.12 recommended), Node.js 22 LTS and npm. Ollama is optional for AI interpretation. Default routing and place lookup require internet access but no API key.
 
-Current model: **Ollama gemma3:4b**, already installed locally. Existing server-only .env settings:
+```sh
+git clone https://github.com/MrCyberlord/RunningApp.git
+cd RunningApp
+python -m venv .venv
+```
 
-    MODEL_PROVIDER=ollama
-    GEMMA_MODEL=gemma3:4b
-    OLLAMA_URL=http://127.0.0.1:11434
+Activate the environment:
 
-Build and start the app in another terminal:
+| Platform | Command |
+| --- | --- |
+| macOS/Linux | `source .venv/bin/activate` |
+| Windows PowerShell | `.\.venv\Scripts\Activate.ps1` |
+| Windows Command Prompt | `.venv\Scripts\activate.bat` |
 
-    npm --prefix frontend run build
-    .\.venv\Scripts\python.exe -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
+If your Python command is python3 or py, use that to create the environment. If PowerShell activation is restricted, use Command Prompt or invoke the virtual environment’s Python executable directly.
 
-Open http://127.0.0.1:8000. Health: http://127.0.0.1:8000/api/health. Reuse running services instead of starting duplicates. Keep Ollama private on loopback; do not tunnel it or expose port 11434. No frontend API key is required.
+From the repository root, with the environment activated:
 
-Fresh checkout prerequisites: Python 3.11+ (3.12 recommended), Node 22 LTS and npm. Install dependencies:
+```sh
+python -m pip install -r backend/requirements.txt
+npm --prefix frontend ci
+npm --prefix frontend run build
+python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000
+```
 
-    python -m venv .venv
-    .\.venv\Scripts\python.exe -m pip install -r backend/requirements.txt
-    if (-not (Test-Path -LiteralPath .env)) { Copy-Item -LiteralPath .env.example -Destination .env }
-    npm --prefix frontend ci
+Open http://127.0.0.1:8000. FastAPI serves the built frontend and API; health is available at /api/health. The default configuration works with form controls and explicitly reports AI as unused.
 
-The example defaults to MODEL_PROVIDER=none and honest form fallback. Local AI additionally requires Ollama and the gemma3:4b model; on a new machine install that model separately with ollama pull gemma3:4b, then set the three local values above. No download is necessary on this workstation. Never overwrite an existing .env. Python launcher alternative: py -3.12 -m venv .venv. Linux/macOS: substitute .venv/bin/python for the Windows venv executable.
+### Enable local Gemma
 
-For frontend development, keep FastAPI running and use a third terminal:
+Install [Ollama](https://ollama.com/), then download the evaluated model:
 
-    npm --prefix frontend run dev
+```sh
+ollama pull gemma3:4b
+ollama serve
+```
 
-Open http://127.0.0.1:5173; Vite proxies /api to FastAPI. For the recording, prefer the built app on port 8000.
+Skip ollama serve if Ollama is already running. Copy .env.example to .env in the repository root if it does not exist, preserving any existing settings. Set:
 
-## Use it
+```dotenv
+MODEL_PROVIDER=ollama
+GEMMA_MODEL=gemma3:4b
+OLLAMA_URL=http://127.0.0.1:11434
+```
 
-1. Tap the map to select a start, or use browser geolocation (permission and HTTPS/localhost required). The initial Bengaluru viewport is not a detected location. Missing start selection shows instructions.
-2. Choose walking/jogging, total minutes, optional pause and place categories. Or interpret “A 30-minute jog with greenery and a 5-minute stop,” then review the resulting form values.
-3. Generate a route. Read distance, moving estimate, pause and total. Inspect suggested stops versus nearby-only markers and any warnings.
+Restart FastAPI after changing configuration. Keep model settings and credentials server-side; .env is ignored by Git. No frontend key is required. Local inference speed depends on hardware and available memory.
 
-Gemma extracts preferences only. Strict Pydantic validation requires all fields, correct types, supported categories and valid time bounds. Malformed or unavailable model responses preserve form values and explicitly report source=form_fallback; successful model output reports source=gemma. This identifies origin, not semantic certainty. Natural-language interpretation does not generate route geometry.
+For frontend development, keep FastAPI running and start Vite in another terminal:
 
-## Routes, places and time
+```sh
+npm --prefix frontend run dev
+```
 
-FOSSGIS OSRM's **foot** endpoint supplies real pedestrian GeoJSON; optional openrouteservice uses foot-walking. No driving substitution or fabricated route is used. Code tries at most three mapped waypoint routes, accepts closure within 20 m, start snapping within 100 m and total time within the requested budget. Geographic candidate waypoints are not invented places.
+Open http://127.0.0.1:5173. Vite proxies /api requests to port 8000.
 
-Moving minutes derive from routed distance at 4.8 km/h walking or 8 km/h jogging. Requested pause time is reserved from the moving budget and added even without a mapped place; in that case it is explicitly unassigned. Provider duration is retained separately. At most one preferred mapped stop is included; each unmet category is warned. Routes may retrace paths, undershoot the budget or fail.
+## Architecture
 
-Overpass supplies OSM parks/gardens, viewpoints, greengrocers and drinking-water points, excluding explicit private/no-access places and drinking_water=no. Polygon centres are not entrances; suggested stops require a returned route vertex within 80 m of the mapped point. Other markers are nearby only. Opening hours, legal access, route suitability, stock and water quality are unknown, not inferred.
+The React form sends text and current settings to FastAPI. Ollama runs Gemma with a JSON schema and temperature zero; Pydantic validates preference fields, types, categories and time bounds. Successful interpretation reports `source: gemma`. Invalid or unavailable output preserves current form values and reports `source: form_fallback`. Users review interpreted settings before planning.
 
-Lookup uses a bounded 15-second default per-attempt deadline, at most one alternative public endpoint, a bounded ten-minute cache including successful empty results, and explicit unavailable versus empty status. HTTP 429 stops failover and establishes a cooldown. Routing/place requests share serialization with at least 1.05 seconds between starts. Use one backend worker; no shared limiter exists across processes.
+The planner queries Overpass for mapped places and requests geometry from FOSSGIS OSRM’s pedestrian endpoint. Gemma supplies neither geometry nor time calculations. Code estimates moving time from routed distance at **4.8 km/h walking** or **8 km/h jogging**, reserves the requested pause, and checks that total time fits the available time. A pause remains included when no mapped place can be assigned, with a warning.
 
-## Verified local evidence
+Place lookup uses bounded timeouts, at most one alternative endpoint and a ten-minute in-memory cache. Successful empty results are distinguished from unavailable service. Run one backend worker because caching and upstream rate limiting are process-local.
 
-- **October 12 resumed HTTP check:** health OK; installed gemma3:4b returned correct jogging/30/greenery/5 preferences with source=gemma. Those values were sent to /api/route, which returned HTTP 200, FOSSGIS OSRM foot, 3.221 km and **24.1545 moving + 5 pause = 29.1545 minutes**. Place results were reused from a successful Overpass cache entry. [Raw evidence](docs/resume-verification-2026-10-12.json).
-- Prior instrumented checks confirmed interpreted values reach the validated planner input. Jogging geometry closed exactly, snapped 6.14 m from the selected start, and passed within 34.72 m of a garden waypoint. A separate walking case returned 1.272 km / 20.90375 minutes including pause, with honest warnings when lookup failed. [End-to-end report](docs/end-to-end-4b.md), [raw local HTTP result](docs/end-to-end-http-4b.json).
-- **Small fixed evaluation, not general accuracy:** unchanged seven extraction cases scored 1/7 for 270m, 3/7 for 1b and 7/7 for 4b. Strict validation and the prompt were not relaxed. 4b cold application latency was 11.485 s; warm mean 5.750 s. These development cases do not establish reliability on unseen requests. [Comparison](docs/gemma-4b-comparison.md), [preserved results](docs/gemma-check-4b.json).
-- 57 deterministic backend tests pass, with one dependency deprecation warning. TypeScript and the production build pass. CSS/source calculations cover 360, 390, 768 and 1280 px; **rendered layouts and actual browser clicks/geolocation/resizing remain unverified because no browser connection was available**. The original transparent runner favicon is bundled; missing-start feedback and Leaflet resize observation are implemented.
+## Validation
 
-Checks from repository root:
+- **Automated:** 57 backend tests passed; TypeScript and the production build passed.
+- **Live local API:** Gemma preferences reached the planner, and real pedestrian round trips returned successfully. One jogging case produced 3.221 km with 24.15 moving minutes plus a 5-minute pause. See the [end-to-end report](docs/end-to-end-4b.md) and [latest HTTP evidence](docs/resume-verification-2026-10-12.json).
+- **Manual UI checks:** the developer verified time changes, longer jogging routes, and reduced route distance when adding stop time. Other browser interactions and rendered layouts remain unverified.
 
-    .\.venv\Scripts\python.exe -m pytest backend -q -p no:cacheprovider
-    .\frontend\node_modules\.bin\tsc.cmd --project frontend/tsconfig.json --noEmit
-    npm --prefix frontend run build
+The same **small fixed set of seven extraction cases** produced:
 
-Optional live checks call local Ollama/free public services and overwrite their latest evidence files; preserve prior reports if needed:
+| Local model | Semantically correct cases |
+| --- | --- |
+| gemma3:270m | 1/7 |
+| gemma3:1b | 3/7 |
+| gemma3:4b | 7/7 |
 
-    .\.venv\Scripts\python.exe -m backend.check_end_to_end
-    .\.venv\Scripts\python.exe -m backend.check_gemma
-    .\.venv\Scripts\python.exe -m backend.check_places
+These development results do not establish general accuracy. The prompt, expectations and strict validation were preserved across comparisons. See [evaluation details and timings](docs/gemma-4b-comparison.md).
 
-## Free services, attribution and privacy
+Run checks with the Python environment activated:
 
-| Service | Account/key | Policy and constraints |
-| --- | --- | --- |
-| [OpenStreetMap tiles](https://operations.osmfoundation.org/policies/tiles/) | None | Visible contributor attribution; no bulk/offline prefetching; best-effort shared service. |
-| [FOSSGIS foot routing](https://routing.openstreetmap.de/about.html) | None | One request/second limit, valid User-Agent and attribution; limited search, no heavy traffic. |
-| [Overpass](https://dev.overpass-api.de/overpass-doc/en/preface/commons.html) | None | Shared capacity, rate limits/timeouts; modest use only; cache, bounded retry and OSM source links. |
-| [Optional openrouteservice](https://openrouteservice.org/plans/) | Free account/key | Not tested with a key here; confirm current dashboard quota and attribution before use. |
-| Local [Ollama Gemma](https://ollama.com/library/gemma3) | Installed locally | gemma3:4b, server-side; no paid host. |
+```sh
+python -m pytest backend -q -p no:cacheprovider
+npm --prefix frontend run build
+```
 
-OSM data attribution and source links remain visible. Coordinates go to routing/place providers; map views go to tile providers. Optional interpretation sends text and current settings to the configured model, not coordinates. No location database exists; place results are cached in memory. Browser Google Fonts requests expose ordinary network metadata; system fonts are the fallback. Public providers may log requests and offer no availability guarantee. Keep .env, credentials, dependencies and dist out of Git; .env.example is safe configuration only.
+The build includes TypeScript checking. Optional live checks are `python -m backend.check_end_to_end`, `python -m backend.check_gemma` and `python -m backend.check_places`; they call external services/local Ollama and replace their latest evidence files.
 
-## Hosting readiness and limits
+## Limitations
 
-[Exact Render account/GitHub/environment steps](docs/render-deployment.md). render.yaml prepares one Free Python web service, no database/disk, one worker, built React served by FastAPI. Render build/runtime is **not tested**; the GitHub repository is https://github.com/MrCyberlord/RunningApp, using branch master. MODEL_PROVIDER=none is the honest initial hosted configuration. Render's idle sleep and usage allowances affect demos; paid overages can apply with a payment method, so verify zero-spend controls before creating anything. [Render Free policy](https://render.com/docs/free).
+- Route search tries at most three candidates and includes at most one preferred mapped stop. Paths may overlap, retrace or undershoot the requested time; a suitable route may not be found.
+- Fixed pace estimates do not account for terrain, crossings or individual fitness.
+- Mapped centres are not verified entrances. Nearby markers do not imply visits. Opening hours, legal access, route suitability, fruit stock and water quality are unverified.
+- Shared public services may time out or rate-limit requests. Schema validation cannot guarantee that a model interpreted intent correctly.
+- Geolocation requires browser permission and HTTPS or localhost. Mobile layout, geolocation and browser behavior beyond the manual checks above still need interactive verification.
+- [Render Free configuration](render.yaml) is prepared, but deployment and hosted Gemma inference have not been verified. Local Ollama should remain private. See [deployment details](docs/render-deployment.md) and [hosted-model research](docs/hosting-options.md).
 
-[Time-boxed hosted Gemma investigation](docs/hosting-options.md): OpenRouter's live public catalog listed two zero-priced Gemma 4 variants; authenticated inference and account controls are unverified. Backboard promotional entitlement/balance, Gemma availability and integration are unverified. Google documents hosted Gemma, but its native API is not wired here. No hosted option is recommended as verified. Do not expose local Ollama to make a public demo.
+## Data, attribution and privacy
 
-Existing adapter supports an independently verified free OpenAI-compatible host with server-only MODEL_PROVIDER=openai_compatible, GEMMA_BASE_URL, GEMMA_MODEL, GEMMA_API_KEY and HOSTED_GEMMA_FREE_CONFIRMED=true. The confirmation flag is not a spending cap. Do not enable it until availability, hard spending controls and actual extraction have been verified. Otherwise keep explicit form_fallback. Local model evaluation does not transfer to different hosted models.
+Maps and places use [OpenStreetMap contributors’ data](https://www.openstreetmap.org/copyright). Pedestrian routes use [FOSSGIS routing](https://routing.openstreetmap.de/about.html); place queries use [Overpass](https://overpass-api.de/). Optional [openrouteservice](https://openrouteservice.org/) routing requires a server-side key and has not been tested here. Respect each provider’s usage and attribution policies; these public endpoints are intended for modest traffic.
 
-## Submission materials and remaining work
-
-[DEV draft](docs/dev-draft.md) · [60–90 second recording checklist](docs/demo-checklist.md) · [handoff](docs/next-session.md).
-
-Priorities: live browser verification, a real local demo recording, then free hosted Gemma/Render only if account access and authorization are available. Confirm official challenge template, eligibility and category, add actual repository/video links when they exist, then obtain authorization before deployment or publishing the DEV post. No URL or partner claim should be invented.
-
-User-provided deadline: **October 12, 2026 at 12:29 PM IST (UTC+05:30)**; target **11:30 AM IST**. Hosting is time-boxed; a reproducible local project and honest write-up take priority when blocked.
+Planning sends coordinates to route/place providers, and map tiles reveal the viewed area to the tile service. Interpretation sends text and current preferences to the configured model. Runningo has no location database; place responses are temporarily cached in memory. The interface also requests Google Fonts, with system-font fallbacks. Third-party services may retain request logs.
